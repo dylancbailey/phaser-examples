@@ -5,6 +5,7 @@ function preload() {
 
     game.load.atlas('breakout', 'assets/games/breakout/breakout.png', 'assets/games/breakout/breakout.json');
     game.load.image('starfield', 'assets/misc/starfield.jpg');
+    game.load.image('paddle', 'assets/games/breakout/paddle.png');
 
 }
 
@@ -48,7 +49,7 @@ function create() {
         }
     }
 
-    paddle = game.add.sprite(game.world.centerX, 500, 'breakout', 'paddle_big.png');
+    paddle = game.add.sprite(game.world.centerX, 500, 'paddle');
     paddle.anchor.setTo(0.5, 0.5);
 
     game.physics.enable(paddle, Phaser.Physics.ARCADE);
@@ -86,13 +87,13 @@ function update () {
 
     paddle.x = game.input.x;
 
-    if (paddle.x < 24)
+    if (paddle.x < 30)
     {
-        paddle.x = 24;
+        paddle.x = 30;
     }
-    else if (paddle.x > game.width - 24)
+    else if (paddle.x > game.width - 30)
     {
-        paddle.x = game.width - 24;
+        paddle.x = game.width - 30;
     }
 
     if (ballOnPaddle)
