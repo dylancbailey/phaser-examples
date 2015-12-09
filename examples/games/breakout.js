@@ -164,6 +164,7 @@ function ballHitBrick (_ball, _brick) {
         score += 1000;
         scoreText.text = 'score: ' + score;
         introText.text = '- Next Level -';
+        introText.visible = true;
 
         //  Let's move the ball back to the paddle
         ballOnPaddle = true;
